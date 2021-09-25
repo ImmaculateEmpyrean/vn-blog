@@ -1,0 +1,25 @@
+@import './breakpoints.scss';
+
+$fontSize: (
+    "small": 14px,
+    "normal": 18px,
+    "large": 24px,
+);
+
+@include for-tablet-portrait-up{
+    $fontSize: (
+        "small": 17px,
+        "normal": 22px,
+        "large": 28px,
+    );
+}
+
+.bodyText{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: map.get($fontSize,"small");
+    line-height: 150%;
+
+    letter-spacing: 0.1em;
+}

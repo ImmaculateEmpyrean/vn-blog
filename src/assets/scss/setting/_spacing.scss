@@ -1,0 +1,14 @@
+@import '_breakpoints.scss';
+$spacing: (
+    "small": 4px,
+    "normal": 8px,
+    "large": 10px
+);
+
+@include for-tablet-portrait-up{
+    $spacing: (
+        "small": 5px,
+        "normal": 10px,
+        "large": 15px
+    );
+}
