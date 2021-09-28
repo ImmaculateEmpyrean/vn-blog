@@ -1,25 +1,44 @@
-@import './breakpoints.scss';
-
-$fontSize: (
-    "small": 14px,
-    "normal": 18px,
-    "large": 24px,
-);
+@use './breakpoints.scss' as *;
+:root{
+    --font-small: 14px;
+    --font-normal: 18px;
+    --font-large: 24px;
+}
 
 @include for-tablet-portrait-up{
-    $fontSize: (
-        "small": 17px,
-        "normal": 22px,
-        "large": 28px,
-    );
+    :root{
+        --font-small: 17px;
+        --font-normal: 20px;
+        --font-large: 28px;
+    }   
 }
 
 .bodyText{
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 300;
-    font-size: map.get($fontSize,"small");
+    font-size: var(--font-small);
     line-height: 150%;
 
     letter-spacing: 0.1em;
+}
+
+.subtitle{
+    font-family: 'Roboto Slab', serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: var(--font-normal);
+    line-height: 23px;
+    letter-spacing: -0.05em;
+}
+
+.heading{
+    font-family: 'Roboto Slab', serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: var(--font-large);
+    line-height: 32px;
+
+    text-align: center;
+    letter-spacing: -0.05em;
 }
