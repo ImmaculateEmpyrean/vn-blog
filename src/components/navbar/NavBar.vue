@@ -6,10 +6,11 @@
             <h1 class="subtitle">{{ArticleName}}</h1>
         </div>
         <div v-show="atleastPortraitTablet" class="center">
-            <SearchBar />
+            <SearchBar @inputFieldFocused="inputFieldFocusedHandler"/>
         </div>
         <div class="right">
-
+            <p class="subtitle regular">Home</p>
+            <HamburgerIcon />
         </div>
     </div>
 </template>
@@ -19,12 +20,14 @@
 import breakpoints from '@/js/scssBreakpoints';
 
 // Vue3 Components
-import SearchBar from './SearchBar.vue';
+import SearchBar from '@/components/navbar/SearchBar.vue';
+import HamburgerIcon from '@/components/navbar/HamburgerIcon.vue';
 
 export default {
     name: "NavBar",
     components:{
-        SearchBar
+        SearchBar,
+        HamburgerIcon
     },
     computed:{
         atleastPortraitTablet(){
@@ -36,6 +39,17 @@ export default {
             type: String,
             default: "Article Name"
         }
+    },
+    methods:{
+        inputFieldFocusedHandler(focused){
+            let center = this.$el.querySelector('.center')
+            if(center === null) return; //no need for this to work in mobile phone
+
+            if(focused === true) 
+                center.style.flexBasis = "40%";
+            else
+                center.style.flexBasis = "30%";
+        }
     }
 }
 </script>
@@ -43,4 +57,32 @@ export default {
 <style lang="scss" scoped>
 @use '../../assets/scss/setting' as *;
 
+#navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-normal);
+
+    background-color: map-get($dark,"darker");
+    padding: var(--spacing-normal);
+}
+
+.left
+{
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-normal);
+}
+
+.center{
+    transition: flex-basis ease-in-out 0.5s;
+    flex: 0 0 30%;
+}
+
+.right{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--spacing-large);
+}
 </style>

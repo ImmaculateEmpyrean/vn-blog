@@ -14,3 +14,11 @@ export default {
     }
 }
 </script>
+
+<style lang="scss">
+    @use './assets/scss/setting' as *;
+
+    #app{
+        //padding: var(--spacing-small);
+    }
+</style>

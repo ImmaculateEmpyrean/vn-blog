@@ -1,12 +1,12 @@
 @use './breakpoints.scss' as *;
-:root{
+*{
     --font-small: 14px;
     --font-normal: 18px;
     --font-large: 24px;
 }
 
 @include for-tablet-portrait-up{
-    :root{
+    *{
         --font-small: 17px;
         --font-normal: 20px;
         --font-large: 28px;
@@ -26,16 +26,20 @@
 .subtitle{
     font-family: 'Roboto Slab', serif;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 700;
     font-size: var(--font-normal);
     line-height: 23px;
     letter-spacing: -0.05em;
+
+    &.regular{
+        font-weight: 300;
+    }
 }
 
 .heading{
     font-family: 'Roboto Slab', serif;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 700;
     font-size: var(--font-large);
     line-height: 32px;
 
