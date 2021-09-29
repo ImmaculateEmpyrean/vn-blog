@@ -1,15 +1,15 @@
 <template>
     <div id="navBar">
         <div class="left">
-            <img :src="require('@/assets/img/logo.svg')" alt="vn-blog logo">
-            <h1 class="subtitle">Vn Blog</h1>
-            <h1 class="subtitle">{{ArticleName}}</h1>
+            <BreadCrumb :ArticleName="ArticleName"/>
         </div>
         <div v-show="atleastPortraitTablet" class="center">
             <SearchBar @inputFieldFocused="inputFieldFocusedHandler"/>
         </div>
         <div class="right">
-            <p class="subtitle regular">Home</p>
+            <router-link :to="{
+                path: '/'
+            }" class="subtitle regular" @click="$emit('Home:clicked')">Home</router-link>
             <HamburgerIcon />
         </div>
     </div>
@@ -22,10 +22,12 @@ import breakpoints from '@/js/scssBreakpoints';
 // Vue3 Components
 import SearchBar from '@/components/navbar/SearchBar.vue';
 import HamburgerIcon from '@/components/navbar/HamburgerIcon.vue';
+import BreadCrumb from '@/components/navbar/BreadCrumb.vue';
 
 export default {
     name: "NavBar",
     components:{
+        BreadCrumb,
         SearchBar,
         HamburgerIcon
     },
@@ -67,18 +69,10 @@ export default {
     padding: var(--spacing-normal);
 }
 
-.left
-{
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-normal);
-}
-
 .center{
     transition: flex-basis ease-in-out 0.5s;
     flex: 0 0 30%;
 }
-
 .right{
     display: flex;
     align-items: center;
