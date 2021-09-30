@@ -1,4 +1,5 @@
-@use './breakpoints.scss' as *;
+@use './breakpoints' as *;
+
 *{
     --font-small: 12px;
     --font-normal: 16px;
@@ -21,30 +22,7 @@
     }
 }
 
-.bodyText{
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: var(--font-small);
-    line-height: 150%;
-
-    letter-spacing: 0.1em;
-}
-
-.subtitle{
-    font-family: 'Roboto Slab', serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: var(--font-normal);
-    line-height: 23px;
-    letter-spacing: -0.05em;
-
-    &.regular{
-        font-weight: 300;
-    }
-}
-
-.heading{
+.heading1{
     font-family: 'Roboto Slab', serif;
     font-style: normal;
     font-weight: 700;
@@ -53,4 +31,32 @@
 
     text-align: center;
     letter-spacing: -0.05em;
+}
+
+.heading2{
+    font-family: 'Roboto Slab', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: var(--font-normal);
+    line-height: 23px;
+    letter-spacing: 0.15em;
+}
+
+.heading3{
+    font-family: 'Roboto Slab', serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: var(--font-small);
+    line-height: 23px;
+    letter-spacing: 0.25em;
+}
+
+.paragraph{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: var(--font-small);
+    line-height: 150%;
+    
+    letter-spacing: 0.1em;
 }

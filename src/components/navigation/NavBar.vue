@@ -9,7 +9,7 @@
         <div class="right">
             <router-link :to="{
                 path: '/'
-            }" class="subtitle regular" @click="$emit('Home:clicked')">Home</router-link>
+            }" class="heading3" @click="$emit('Home:clicked')">Home</router-link>
             <HamburgerIcon  @HamburgerIcon:clicked="$emit('HamburgerIcon:clicked')"/>
         </div>
     </div>

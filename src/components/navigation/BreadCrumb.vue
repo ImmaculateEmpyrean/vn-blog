@@ -1,8 +1,8 @@
 <template>
     <div id="BreadCrumb">
         <img :src="require('@/assets/img/logo.svg')" alt="vn-blog logo">
-        <h1 class="subtitle" id="websiteTitle">Vn Blog</h1>
-        <h1 class="subtitle">{{ArticleName}}</h1>
+        <h1 class="heading1" id="websiteTitle">Vn Blog</h1>
+        <h1 class="heading1">{{ArticleName}}</h1>
     </div>
 </template>
 

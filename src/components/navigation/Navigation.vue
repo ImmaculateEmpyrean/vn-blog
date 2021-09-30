@@ -30,24 +30,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    #navigation{
-        display: flex;
-        position: fixed;
-        width: 100%;
+@use '../../assets/scss/setting' as *;
 
-        flex-direction: column;
+#navigation{
+    display: flex;
+    position: fixed;
+    width: 100%;
+
+    flex-direction: column;
+}
+
+#SideMenu{
+    transition: transform ease-in-out 0.5s;
+    flex: 1 1 100%;
+    
+    width: 100%;
+    @include for-tablet-portrait-up{
+        align-self: flex-end;
+        width: 50%;
+    }
+    @include for-desktop-up{
+        width: 20%;
     }
 
-    #SideMenu{
-        flex: 1 1 100%;
-        width: 20%;
-
-        align-self: flex-end;
-
-        border: 1px solid red;
-
-        &.hidden{
+    &.hidden{
+        transform: translateY(100vh);
+        @include for-tablet-portrait-up{
+            transform: translateX(50vw);
+        }
+        @include for-desktop-up{
             transform: translateX(20vw);
         }
     }
+}
 </style>
