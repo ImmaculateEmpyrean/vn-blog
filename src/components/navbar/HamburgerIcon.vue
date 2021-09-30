@@ -20,5 +20,20 @@ export default {
 .hamburger-graphic{
     fill: $light;
     cursor: pointer;
+
+    //the size of the hamburger-graphic is half of that of the logo-image on the right side of the nav-bar
+
+    width: 30px;
+    height: 30px;
+
+    @include for-tablet-portrait-up{
+        width: 50px;
+        height: 50px;
+    }
+
+    @include for-desktop-up{
+        width: 62.5px;
+        height: 62.5px;
+    }
 }
 </style>

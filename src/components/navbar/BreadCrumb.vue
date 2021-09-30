@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@use '../../assets/scss/setting';
+@use '../../assets/scss/setting' as *;
 
 #BreadCrumb
 {
@@ -28,7 +28,22 @@ export default {
 }
 
 img{
+    //the image is always double the size of the hamburger icon on the right side of the screen
+
     margin: 0 var(--spacing-normal);
+
+    width: 60px;
+    height: 60px;
+
+    @include for-tablet-portrait-up{
+        width: 100px;
+        height: 100px;
+    }
+
+    @include for-desktop-up{
+        width: 125px;
+        height: 125px;
+    }
 }
 
 #websiteTitle{

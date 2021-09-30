@@ -33,7 +33,7 @@ export default {
     },
     computed:{
         atleastPortraitTablet(){
-            return window.innerWidth > parseInt(breakpoints.forTabletPortraitUp.breakpoint);
+            return window.innerWidth >= parseInt(breakpoints.forTabletPortraitUp.breakpoint);
         }
     },
     props:{
@@ -47,10 +47,18 @@ export default {
             let center = this.$el.querySelector('.center')
             if(center === null) return; //no need for this to work in mobile phone
 
-            if(focused === true) 
-                center.style.flexBasis = "40%";
-            else
-                center.style.flexBasis = "30%";
+            if(focused === true){
+                if(window.innerWidth >= parseInt(breakpoints.forDesktopUp.breakpoint))
+                    center.style.flexBasis = "60%";    
+                else
+                    center.style.flexBasis = "40%";
+            }
+            else{
+                if(window.innerWidth >= parseInt(breakpoints.forDesktopUp.breakpoint))
+                    center.style.flexBasis = "50%";    
+                else
+                    center.style.flexBasis = "30%";
+            }
         }
     }
 }
@@ -72,6 +80,11 @@ export default {
 .center{
     transition: flex-basis ease-in-out 0.5s;
     flex: 0 0 30%;
+
+    @include for-desktop-up{
+        flex: 0 0 50%;
+    }
+
 }
 .right{
     display: flex;

@@ -1,7 +1,7 @@
 @use '_breakpoints.scss' as *;
 *{
-    --spacing-small: 4px;
-    --spacing-normal: 8px;
+    --spacing-small: 3px;
+    --spacing-normal: 6px;
     --spacing-large: 10px;
 }
 
@@ -9,6 +9,14 @@
     *{
         --spacing-small: 5px;
         --spacing-normal: 10px;
-        --spacing-large: 20px;
+        --spacing-large: 15px;
     } 
+}
+
+@include for-desktop-up{
+    *{
+        --spacing-small: 5px;
+        --spacing-normal: 10px;
+        --spacing-large: 20px;
+    }
 }

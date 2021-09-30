@@ -1,16 +1,24 @@
 @use './breakpoints.scss' as *;
 *{
-    --font-small: 14px;
-    --font-normal: 18px;
-    --font-large: 24px;
+    --font-small: 12px;
+    --font-normal: 16px;
+    --font-large: 22px;
 }
 
 @include for-tablet-portrait-up{
     *{
+        --font-small: 14px;
+        --font-normal: 17px;
+        --font-large: 25px;
+    }   
+}
+
+@include for-desktop-up{
+    *{
         --font-small: 17px;
         --font-normal: 20px;
         --font-large: 28px;
-    }   
+    }
 }
 
 .bodyText{
