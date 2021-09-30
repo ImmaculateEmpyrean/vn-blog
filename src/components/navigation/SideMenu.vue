@@ -1,8 +1,8 @@
 <template>
     <div id="SideMenu">
-        <h1 class="heading1">Menu</h1>    
+        <h1 class="heading1">MENU</h1>    
         <div class="sections">
-            <Section title="Site Navigation">
+            <Section title="SITE NAVIGATION">
                 <template v-slot:links>
                     <li><router-link :to="{path: '/'      }">Home   </router-link></li>
                     <li><router-link :to="{path: '/Search'}">Search </router-link></li>
@@ -10,7 +10,7 @@
                 </template>
             </Section>
 
-            <Section title="Social Media">
+            <Section title="SOCIAL MEDIA">
                 <template v-slot:links>
                     <li><a href="#">Instagram</a></li>
                     <li><a href="#">Twitter</a></li>
@@ -18,7 +18,7 @@
                 </template>
             </Section>
 
-            <Section title="Resources">
+            <Section title="RESOURCES">
                 <template v-slot:links>
                     <li><a href="#">Advertising</a></li>
                     <li><a href="#">Terms Of Use</a></li>
@@ -27,7 +27,7 @@
                 </template>
             </Section>
 
-            <Section title="Help">
+            <Section title="GET IN TOUCH">
                 <template v-slot:links>
                     <li><a href="#">Contact Me</a></li>
                     <li><a href="#">My Website</a></li>
@@ -67,5 +67,11 @@ export default {
     margin: var(--spacing-large) 0;
 }
 
-li a{ @extend .heading3; }
+li{
+    display: flex;
+    justify-content: center;
+    @include for-desktop-up{ justify-content: left; }
+
+    a{@extend .heading3;}
+}
 </style>

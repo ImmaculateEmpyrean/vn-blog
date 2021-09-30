@@ -47,7 +47,7 @@ export default {
     width: 100%;
     @include for-tablet-portrait-up{
         align-self: flex-end;
-        width: 50%;
+        width: 30%;
     }
     @include for-desktop-up{
         width: 20%;
@@ -56,7 +56,7 @@ export default {
     &.hidden{
         transform: translateY(100vh);
         @include for-tablet-portrait-up{
-            transform: translateX(50vw);
+            transform: translateX(30vw);
         }
         @include for-desktop-up{
             transform: translateX(20vw);

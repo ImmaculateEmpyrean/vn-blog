@@ -26,7 +26,10 @@ export default {
     margin: var(--spacing-large);
 
     .heading2{
-        margin-bottom: var(--spacing-small); 
+        margin-bottom: var(--spacing-small);
+        text-align: center;
+        
+        @include for-desktop-up{ text-align: left; }
     }
 }
 </style>
