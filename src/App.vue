@@ -1,20 +1,24 @@
 <template>
    <div id="app">
-        <NavBar />        
+        <Navigation />        
    </div>
 </template>
 
 <script>
-import NavBar from './components/navbar/NavBar.vue';
+import Navigation from './components/navigation/Navigation.vue';
 
 export default {
     name: "App",
     components:{
-        NavBar
+        Navigation
     }
 }
 </script>
 
 <style lang="scss">
     @use './assets/scss/setting' as *;
+
+    #app{
+        height: 1000vw;
+    }
 </style>

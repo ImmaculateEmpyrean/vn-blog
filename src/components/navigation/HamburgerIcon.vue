@@ -1,8 +1,6 @@
 <template>
-    <div id="hamburgerIcon">
-        <svg width="48" height="47" viewBox="0 0 48 47" fill="none" xmlns="http://www.w3.org/2000/svg" class="hamburger-graphic"
-        @click="$emit('HamburgerIcon:clicked')"
-        >
+    <div id="hamburgerIcon" @click="$emit('HamburgerIcon:clicked')">
+        <svg width="48" height="47" viewBox="0 0 48 47" fill="none" xmlns="http://www.w3.org/2000/svg" class="hamburger-graphic">
             <path d="M48 46.0156H0V38.3464H48V46.0156ZM48 26.8424H0V19.1732H48V26.8424ZM48 7.66927H0V0H48V7.66927Z"/>
         </svg>
     </div>

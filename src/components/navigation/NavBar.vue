@@ -10,7 +10,7 @@
             <router-link :to="{
                 path: '/'
             }" class="subtitle regular" @click="$emit('Home:clicked')">Home</router-link>
-            <HamburgerIcon />
+            <HamburgerIcon  @HamburgerIcon:clicked="$emit('HamburgerIcon:clicked')"/>
         </div>
     </div>
 </template>
@@ -20,9 +20,9 @@
 import breakpoints from '@/js/scssBreakpoints';
 
 // Vue3 Components
-import SearchBar from '@/components/navbar/SearchBar.vue';
-import HamburgerIcon from '@/components/navbar/HamburgerIcon.vue';
-import BreadCrumb from '@/components/navbar/BreadCrumb.vue';
+import SearchBar from '@/components/navigation/SearchBar.vue';
+import HamburgerIcon from '@/components/navigation/HamburgerIcon.vue';
+import BreadCrumb from '@/components/navigation/BreadCrumb.vue';
 
 export default {
     name: "NavBar",
